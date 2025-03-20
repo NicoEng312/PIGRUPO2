@@ -1,0 +1,46 @@
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+ div.top-bar {
+    display: flex;
+    padding-right: 10px;
+    align-self: flex-end;
+}
+span.arriba {
+    width: 100%;
+    text-align: right;
+    font-size: 14px;
+    padding: 10px;
+}
+
+header .logo img {
+    width: 180px; 
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding-bottom: 30px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; 
+    justify-content: center;
+}
+nav.indice{
+    text-align: center;
+    width: 180px;
+    height: 50px;
+    background-color: #444;
+    align-content: center;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
