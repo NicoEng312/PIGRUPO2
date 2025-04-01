@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
   }
-  body {
+  body.register {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -62,3 +62,26 @@
     color: #007bff;
     text-decoration: none;
   }
+/*index*/
+header{
+  background-color:black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  
+}
+img.img{
+  border-radius: 50%;
+  height: 100px;
+}
+ul{
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  color: white;
+  padding-right: 25px;
+}
+li{
+  margin-left: 10px;
+}
