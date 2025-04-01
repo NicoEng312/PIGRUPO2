@@ -7,26 +7,44 @@
     <title>Document</title>
 </head>
 <body class="register">
-    <div class="form-container">
-        <h2 class="Registro">Registro</h2>
-        <form action="login.html" method="POST">
-          <label for="email">Email:</label>
+  <header>
+    <div>
+        <img class="img" src="img/logo.png" alt="logo">
+    </div>
+    <nav>
+        <form class="search-form" action="search-results.html" method="GET">
+         <input type="text" name="barra" placeholder="Buscar..." required>
+         <button type="submit">Buscar</button>
+        </form>
+    </nav> 
+    <nav>
+        <ul>
+            <li>HOME</li>
+            <li>MOVIES</li>
+            <li>SERIES</li>
+        </ul>
+    </nav>
+</header>
+<div class="form-container">
+    <h2 class="Registro">Registro</h2>
+      <form action="login.html" method="POST">
+        <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
     
-          <label for="password">Contraseña:</label>
+        <label for="password">Contraseña:</label>
           <input type="password" id="password" name="password" required>
     
-          <div class="checkbox-container">
-            <input type="checkbox" id="terms" name="terms" required>
-            <label for="terms">Términos y condiciones</label>
-          </div>
+        <div class="checkbox-container">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">Términos y condiciones</label>
+        </div>
     
-          <button type="submit">Registrarse</button>
+        <button type="submit">Registrarse</button>
     
-          <div class="login-link">
-            <p><a href="login.html">Ya tengo una cuenta</a></p>
-          </div>
-        </form>
-      </div>
+        <div class="login-link">
+          <p><a href="login.html">Ya tengo una cuenta</a></p>
+        </div>
+      </form>
+  </div>
 </body>
 </html>
