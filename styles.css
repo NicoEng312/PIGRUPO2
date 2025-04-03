@@ -62,3 +62,14 @@
     color: #007bff;
     text-decoration: none;
   }
+/*css para el index*/
+ul{
+  list-style-type: none;
+  display: flex;
+}
+.register-login{
+  display: flex;
+}
+.menu1{
+  display: flex;
+}
