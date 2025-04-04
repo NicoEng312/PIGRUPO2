@@ -7,24 +7,23 @@
     <title>Home</title>
 </head>
 <body>
-<header>
-    <div>
-        <img src="./img/logo.png.png" alt="logo">
-        <ul class="menu1">
-            <li> <a href="./moviegenres.html"></a>Movie Genres</li>
-            <li> <a href="./seriesgenres.html"></a>Series Genres</li>
-            <li> <a href="./detail-genres.html"></a>Detail Genres</li>
-            <li> <a href="./detail-movies.html"></a>Detail Movies</li>
-            <li> <a href="./detail-series.html"></a>Detail Series</li>
-        </ul>
-    </div>
-    <nav>
-        <ul class="register-login">
-            <li> <a href="./login.html"></a>Login</li>
-            <li> <a href="./register.html"></a>Registro</li>
-        </ul>
-    </nav>
-</header>
-
+    <header>
+        <div>
+            <img class="img" src="img/logo.png" alt="logo">
+        </div>
+        <nav>
+            <form class="search-form" action="search-results.html" method="GET">
+             <input type="text" name="barra" placeholder="Buscar..." required>
+             <button type="submit">Buscar</button>
+            </form>
+        </nav> 
+        <nav>
+            <ul>
+                <li>HOME</li>
+                <li>MOVIES</li>
+                <li>SERIES</li>
+            </ul>
+        </nav>
+    </header>
 </body>
 </html>
