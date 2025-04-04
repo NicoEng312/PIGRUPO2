@@ -109,6 +109,9 @@ body.login{
 }
 
 /*index*/
+body{
+  background-color: black;
+}
 header{
   background-color:black;
   display: flex;
@@ -121,7 +124,7 @@ img.img{
   border-radius: 50%;
   height: 100px;
 }
-ul{
+ul.listah{
   display: flex;
   align-items: center;
   list-style-type: none;
@@ -131,3 +134,36 @@ ul{
 li{
   margin-left: 10px;
 }
+main{
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-start;
+  flex-direction: column;
+}
+section{
+  width: 100%;
+  background-color:  red;
+  border-radius: 10px;
+  border-color: black;
+}
+ul li nav img{
+  height: 400px;
+  border-radius: 30px;
+  border-color: black;
+}
+ul  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  list-style-type: none;
+
+}
+
+ul li nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
