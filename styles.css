@@ -6,13 +6,12 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body.register{
-  background-color: #1e1e1e; 
+  background-color: black; 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 .form-wrapper {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,10 +61,10 @@ label {
   background-color: #444;
   color: #fff;
 }
-.input-email::placeholder{
+.input-email{
   color: #aaa;
 }
-.input-password::placeholder {
+.input-password {
   color: #aaa;
 }
 .checkbox-container {
@@ -81,7 +80,7 @@ label {
   font-size: 14px;
 }
 .form-submit {
-  background-color: #007bff;
+  background-color: rgb(117, 26, 26);
   color: white;
   padding: 14px;
   border: none;
@@ -96,13 +95,13 @@ label {
   text-align: center;
 }
 .login-link a {
-  color: #66b0ff;
+  color: white;
   text-decoration: none;
   font-size: 14px;
 }
 /*login*/
 body.login{
-  background-color: #1e1e1e; 
+  background-color: black; 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
