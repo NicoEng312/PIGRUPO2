@@ -6,7 +6,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body.register{
-  background-color: black; 
+  background-color: #1c1c1c; 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -101,7 +101,7 @@ label {
 }
 /*login*/
 body.login{
-  background-color: black; 
+  background-color: #1c1c1c; 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
