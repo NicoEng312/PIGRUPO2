@@ -234,4 +234,32 @@ footer ul li{
    font-size: 24px;
 }
 /* detail movies*/
+.img12{
+  width: 65%;
+  height: 590px;
+}
+.detailss{
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+}
+.ttt{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.Tit1{
+  font-size: 80px;
+  width: 100%;
+  padding-bottom: 40px;
+}
+.pp{
+  font-weight: 100;
+}
+.desc1{
+  padding-bottom: 40px;
+}
+
 
