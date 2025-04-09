@@ -78,7 +78,7 @@ label {
   font-size: 14px;
 }
 .form-submit {
-  background-color: rgb(117, 26, 26);
+  background-color:  #c62828ed;
   color: white;
   padding: 14px;
   border: none;
@@ -128,8 +128,9 @@ nav.barra {
   border-radius: 7px;
 }
 .barra button{
-  background-color: orange;
+  background-color:  #c62828ed;
   border-radius: 7px;
+  color: white;
 }
 img.img{
   border-radius: 50%;
