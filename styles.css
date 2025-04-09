@@ -233,7 +233,7 @@ footer ul li{
 /* detail series*/
 .img12{
   width: 65%;
-  height: 590px;
+  height: 690px;
 }
 .detailss{
   color: white;
@@ -247,6 +247,7 @@ footer ul li{
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background-color: black;
 }
 .Tit1{
   font-size: 80px;
@@ -260,8 +261,37 @@ footer ul li{
   padding-bottom: 40px;
 }
 
-.footerseries{
-  background-color: black;
-}
+
 
 /*Detail Movies*/
+
+.detailsM{
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: black;
+}
+.ttM{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: black;
+}
+.img12M{
+  width: 65%;
+  height: 690px;
+  padding-right: 20px;
+}
+.Tit1M{
+  font-size: 80px;
+  width: 100%;
+  padding-bottom: 40px;
+}
+.ppm{
+  font-weight: 100;
+}
+.desc1M{
+  padding-bottom: 40px;
+}
