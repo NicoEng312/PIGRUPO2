@@ -230,7 +230,7 @@ footer ul li{
    font-family: 'Bebas Neue';
    font-size: 24px;
 }
-/* detail movies*/
+/* detail series*/
 .img12{
   width: 65%;
   height: 590px;
@@ -240,6 +240,7 @@ footer ul li{
   display: flex;
   align-items: flex-start;
   padding: 20px;
+  background-color: black;
 }
 .ttt{
   width: 100%;
@@ -259,4 +260,8 @@ footer ul li{
   padding-bottom: 40px;
 }
 
+.footerseries{
+  background-color: black;
+}
 
+/*Detail Movies*/
