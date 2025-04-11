@@ -293,9 +293,11 @@ footer ul li{
 }
 .ppm{
   font-weight: 100;
+  font-size: 15px;
 }
 .desc1M{
   padding-bottom: 40px;
+  font-size: 15px;
 }
 
 /*Search results*/
@@ -334,3 +336,7 @@ body.search-results{
   font-weight: bold;
 }
 
+/* Movie genres */
+.moviegenres{
+  background-color: black;
+}
