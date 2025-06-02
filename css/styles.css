@@ -149,7 +149,7 @@ ul.listah{
   font-size: 25px;
 }
 ul.listah li:hover{
-  color:orange;
+  color: #c62828ed;
   transition-duration: 500ms;
 }
 li{
