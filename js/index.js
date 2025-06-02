@@ -4,9 +4,9 @@ window.addEventListener("load", function () {
   var listaSeriesPopulares = document.querySelector("section:nth-of-type(2) ul");
   var listaPeliculasPopulares = document.querySelector("section:nth-of-type(3) ul");
 
-  var urlMejorCalificadas = "https://api.themoviedb.org/3/movie/top_rated?api_key=758f9c0fe9cf446d2c9eb164921c167f";
-  var urlSeries = "https://api.themoviedb.org/3/tv/popular?api_key=758f9c0fe9cf446d2c9eb164921c167f";
-  var urlPeliculas = "https://api.themoviedb.org/3/movie/popular?api_key=758f9c0fe9cf446d2c9eb164921c167f";
+  var urlMejorCalificadas = "https://api.themoviedb.org/3/movie/top_rated?api_key= //api key aca//";
+  var urlSeries = "https://api.themoviedb.org/3/tv/popular?api_key= //api key aca//";
+  var urlPeliculas = "https://api.themoviedb.org/3/movie/popular?api_key= //api key aca//";
 
   // Películas mejor calificadas
   fetch(urlMejorCalificadas)
