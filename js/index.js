@@ -1,12 +1,12 @@
 window.addEventListener("load", function () {
 
-  var listaMejorCalificadas = document.querySelector("section:nth-of-type(1) ul");
-  var listaSeriesPopulares = document.querySelector("section:nth-of-type(2) ul");
-  var listaPeliculasPopulares = document.querySelector("section:nth-of-type(3) ul");
+  let listaMejorCalificadas = document.querySelector("section:nth-of-type(1) ul");
+  let listaSeriesPopulares = document.querySelector("section:nth-of-type(2) ul");
+  let listaPeliculasPopulares = document.querySelector("section:nth-of-type(3) ul");
 
-  var urlMejorCalificadas = "https://api.themoviedb.org/3/movie/top_rated?api_key=758f9c0fe9cf446d2c9eb164921c167f";
-  var urlSeries = "https://api.themoviedb.org/3/tv/popular?api_key=758f9c0fe9cf446d2c9eb164921c167f";
-  var urlPeliculas = "https://api.themoviedb.org/3/movie/popular?api_key=758f9c0fe9cf446d2c9eb164921c167f";
+  let urlMejorCalificadas = "https://api.themoviedb.org/3/movie/top_rated?api_key=758f9c0fe9cf446d2c9eb164921c167f";
+  let urlSeries = "https://api.themoviedb.org/3/tv/popular?api_key=758f9c0fe9cf446d2c9eb164921c167f";
+  let urlPeliculas = "https://api.themoviedb.org/3/movie/popular?api_key=758f9c0fe9cf446d2c9eb164921c167f";
 
   // Películas mejor calificadas
   fetch(urlMejorCalificadas)
@@ -14,13 +14,13 @@ window.addEventListener("load", function () {
       return respuesta.json();
     })
     .then(function (datos) {
-      var contenido = "";
-      for (var i = 0; i < 5; i++) {
-        var pelicula = datos.results[i];
-        var titulo = pelicula.title;
-        var fecha = pelicula.release_date;
-        var imagen = "https://image.tmdb.org/t/p/w500" + pelicula.poster_path;
-        var id = pelicula.id;
+      let contenido = "";
+      for (let i = 0; i < 5; i++) {
+        let pelicula = datos.results[i];
+        let titulo = pelicula.title;
+        let fecha = pelicula.release_date;
+        let imagen = "https://image.tmdb.org/t/p/w500" + pelicula.poster_path;
+        let id = pelicula.id;
 
         contenido += '<li>' +
           '<nav>' +
@@ -35,20 +35,19 @@ window.addEventListener("load", function () {
       listaMejorCalificadas.innerHTML = contenido;
     });
 
-// Series populares
+  // Series populares
   fetch(urlSeries)
     .then(function (respuesta) {
       return respuesta.json();
     })
     .then(function (datos) {
-      var contenido = "";
-      for (var i = 0; i < 5; i++) {
-        var serie = datos.results[i];
-        var titulo = serie.name;
-        var fecha = serie.first_air_date;
-        var imagen = "https://image.tmdb.org/t/p/w500" + serie.poster_path;
-        var id = serie.id;
-
+      let contenido = "";
+      for (let i = 0; i < 5; i++) {
+        let serie = datos.results[i];
+        let titulo = serie.name;
+        let fecha = serie.first_air_date;
+        let imagen = "https://image.tmdb.org/t/p/w500" + serie.poster_path;
+        let id = serie.id;
 
         contenido += '<li>' +
           '<nav>' +
@@ -63,21 +62,19 @@ window.addEventListener("load", function () {
       listaSeriesPopulares.innerHTML = contenido;
     });
 
-
   // Películas más vistas
   fetch(urlPeliculas)
     .then(function (respuesta) {
       return respuesta.json();
     })
     .then(function (datos) {
-      var contenido = "";
-      for (var i = 0; i < 5; i++) {
-        var pelicula = datos.results[i];
-        var titulo = pelicula.title;
-        var fecha = pelicula.release_date;
-        var imagen = "https://image.tmdb.org/t/p/w500" + pelicula.poster_path;
-        var id = pelicula.id;
-
+      let contenido = "";
+      for (let i = 0; i < 5; i++) {
+        let pelicula = datos.results[i];
+        let titulo = pelicula.title;
+        let fecha = pelicula.release_date;
+        let imagen = "https://image.tmdb.org/t/p/w500" + pelicula.poster_path;
+        let id = pelicula.id;
 
         contenido += '<li>' +
           '<nav>' +
@@ -91,6 +88,5 @@ window.addEventListener("load", function () {
       }
       listaPeliculasPopulares.innerHTML = contenido;
     });
-
 
 });
