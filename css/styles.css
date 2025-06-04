@@ -335,6 +335,16 @@ body.search-results{
   gap: 30px;
   justify-content: center;
 }
+.titulo-busqueda {
+  text-align: center;
+  font-size: 28px;
+  color: white;
+  font-family: 'Bebas Neue';
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 .card {
   background-color: #2e2e2e;
   padding: 15px;
