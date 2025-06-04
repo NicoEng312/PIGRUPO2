@@ -138,10 +138,10 @@ img.img{
 }
 ul.listah{
   display: flex;
-  align-items: center;
+  align-items: right;
   list-style-type: none;
   color: white;
-  padding-right: 25px;
+  padding-left: 280px;
   cursor: pointer;
 }
 .listah li{
@@ -156,6 +156,25 @@ li{
   margin-left: 10px;
 }
 .busqueda button{
+  cursor: pointer;
+  width: 100px;
+}
+form.busqueda {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.radio-opciones {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  color: white;
+}
+.radio-opciones label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   cursor: pointer;
 }
 main{

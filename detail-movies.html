@@ -10,26 +10,32 @@
     <title>Detail Movies</title>
 </head>
 <body>
-    <header>
-        <div>
-            <img class="img" src="img/logo.png" alt="logo">
-        </div>
-        <nav class="barra">
-            <form class="busqueda" action="search-results.html" method="GET">
-             <input type="text" name="barra" placeholder="Buscar..." required>
-             <button type="submit">Buscar</button>
-            </form>
-        </nav> 
-        <nav>
-            <ul class="listah">
-                <li><a href="index.html">HOME</a></li>
-                <li> <a href="./moviegenres.html">Generos Peliculas</a></li>
-                <li> <a href="./seriesgenres.html"> Generos Series</a></li>
-                <li><a href="register.html">REGISTER</a></li>
-                <li><a href="login.html">LOGIN</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+  <div>
+    <img class="img" src="img/logo.png" alt="logo">
+  </div>
+
+  <nav>
+    <ul class="listah">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="./moviegenres.html">Generos Peliculas</a></li>
+      <li><a href="./seriesgenres.html">Generos Series</a></li>
+      <li><a href="register.html">REGISTER</a></li>
+      <li><a href="login.html">LOGIN</a></li>
+    </ul>
+  </nav>
+
+  <nav class="barra">
+    <form class="busqueda" action="search-results.html" method="GET">
+      <div class="tipos">
+        <label><input type="radio" name="tipo" value="movie" checked> Movie</label>
+        <label><input type="radio" name="tipo" value="tv"> Serie</label>
+      </div>
+      <input type="text" name="barra" placeholder="Buscar..." required>
+      <button type="submit">Buscar</button>
+    </form>
+  </nav>
+</header>
     <div class="detailsM">
         <img src="./img/godfather.jpg" alt="pelicula" class="img12M">
         <div class="ttM">
