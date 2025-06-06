@@ -28,21 +28,21 @@ document.addEventListener("DOMContentLoaded", function () {
   
         if (titulo) titulo.textContent = data.title;
         if (descripcion) descripcion.textContent = data.overview;
-        if (fecha) fecha.textContent = "Fecha de estreno: " + data.release_date;
-        if (duracion) duracion.textContent = "Duración: " + data.runtime + " minutos";
+        if (fecha) fecha.textContent = `Fecha de estreno: ${data.release_date}`;
+        if (duracion) duracion.textContent = `Duración: ${data.runtime} minutos`;
         if (elenco) elenco.textContent = "Elenco: cargando...";
         if (generos) {
           let nombres = "";
           for (let i = 0; i < data.genres.length; i = i + 1) {
             if (i > 0) {
-              nombres = nombres + ", ";
+              nombres = `${nombres}, `;
             }
-            nombres = nombres + data.genres[i].name;
+            nombres = `${nombres}${data.genres[i].name}`;
           }
-          generos.textContent = "Géneros: " + nombres;
+          generos.textContent = `Géneros: ${nombres}`;
         }
-        if (calificacion) calificacion.textContent = "Calificación de IMDb: " + data.vote_average + "/10";
-        if (imagen) imagen.src = "https://image.tmdb.org/t/p/w500" + data.poster_path;
+        if (calificacion) calificacion.textContent = `Calificación de IMDb: ${data.vote_average}/10`;
+        if (imagen) imagen.src = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
       })
       .catch(function (error) {
         console.log(error);
