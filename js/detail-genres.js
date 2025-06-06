@@ -8,17 +8,11 @@ window.addEventListener("load", function () {
   const tituloGenero = section.querySelector("h2");
   const listaPeliculas = section.querySelector("ul");
 
-
-
-
   if (genreName) {
     tituloGenero.textContent = decodeURIComponent(genreName);
   } else {
     tituloGenero.textContent = "Películas del género";
   }
-
-
-
 
   if (genreId) {
     const urlPeliculas = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es-ES&with_genres=${genreId}`;
@@ -69,16 +63,12 @@ window.addEventListener("load", function () {
   const tituloGenero = section.querySelector("h2");
   const listaSeries = section.querySelector("ul");
 
-
-
-
   if (type === 'tv') {
     if (genreName) {
       tituloGenero.textContent = decodeURIComponent(genreName);
     } else {
       tituloGenero.textContent = "Series del género";
     }
-
 
     if (genreId) {
       const urlSeries = `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&language=es-ES&with_genres=${genreId}`;

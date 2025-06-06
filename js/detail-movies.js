@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
   
-    // Esto es para acceder a los datos de la pelicula
     fetch(url)
       .then(function (res) {
         return res.json();
@@ -33,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (titulo) {
             titulo.textContent = "Error al cargar los datos";
           }
-          return; // Esto es para que se frene la accion si hay algun error detectado
+          return;
         }
   
         let titulo = document.querySelector(".Tit1M");
@@ -69,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
   
-    // Esto es para acceder a los datos del elenco
     let creditsUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=758f9c0fe9cf446d2c9eb164921c167f&language=es`;
     fetch(creditsUrl)
       .then(function (res) {
@@ -81,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (elenco) {
             elenco.textContent = "Elenco no disponible.";
           }
-          return; // Esto es para que se frene la accion si hay algun error detectado
+          return;
         }
   
         if (creditsData.cast && creditsData.cast.length > 0) {
