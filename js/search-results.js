@@ -1,132 +1,71 @@
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
+  let params = new URLSearchParams(location.search);
+  let id = params.get("id");
 
-
-  let queryString = location.search;
-  let query = new URLSearchParams(queryString);
-
-
-  let termino = query.get("barra");
-  let tipo = query.get("tipo");
-
-
-  if (!tipo) {
-    tipo = "movie";
+  if (!id) {
+    let titulo = document.querySelector(".Tit1");
+    if (titulo) {
+      titulo.textContent = "Serie no encontrada";
+    }
+    return;
   }
 
-
-  let titulo = document.querySelector("h2");
-  titulo.innerText = "Resultados de búsqueda para: " + termino;
-
-  let url = "https://api.themoviedb.org/3/search/" + tipo + "?api_key=758f9c0fe9cf446d2c9eb164921c167f&query=" + termino;
-
-  let contenedor = document.querySelector(".cards-section");
-  contenedor.innerHTML = "<p style='color: white;'>Cargando...</p>";
+  let url = `https://api.themoviedb.org/3/tv/${id}?api_key=758f9c0fe9cf446d2c9eb164921c167f&language=es`;
 
   fetch(url)
-    .then(function (respuesta) {
-      return respuesta.json();
+    .then(function (res) {
+      return res.json();
     })
     .then(function (data) {
-      let contenido = "";
+      let titulo = document.querySelector(".Tit1");
+      let descripcion = document.querySelector(".desc1");
+      let fecha = document.querySelector(".text1");
+      let temporadas = document.querySelector(".text2");
+      let elenco = document.querySelector(".text3");
+      let creadores = document.querySelector(".text4");
+      let generos = document.querySelector(".text5");
+      let calificacion = document.querySelector(".calificacionserie");
+      let imagen = document.querySelector(".img12");
 
-      if (data.results.length == 0) {
-        contenido = "<p style='color: white;'>No se encontraron resultados.</p>";
-      } else {
-        for (let i = 0; i < data.results.length; i = i + 1) {
-          if (i >= 20) {
-            break;
-          }
-          const resultado = data.results[i];
-
-          let tituloItem;
-          let fecha;
-          let imagen;
-          let id;
-          let link;
-
-          if (tipo == "movie") {
-            tituloItem = resultado.title;
-            fecha = resultado.release_date;
-            link = `detail-movies.html?id=${resultado.id}`;
-          } else {
-            tituloItem = resultado.name;
-            fecha = resultado.first_air_date;
-            link = `detail-series.html?id=${resultado.id}`;
-          }
-
-          imagen = `https://image.tmdb.org/t/p/w500${resultado.poster_path}`;
-
-          contenido += `
-            <article class='card'>
-              <h3>${tituloItem}</h3>
-              <a href='${link}'>
-                <img src='${imagen}' alt='${tituloItem}'>
-              </a>
-              <h4>${fecha}</h4>
-            </article>
-          `;
+      if (titulo) titulo.textContent = data.name;
+      if (descripcion) descripcion.textContent = data.overview;
+      if (fecha) fecha.textContent = "Fecha de estreno: " + data.first_air_date;
+      if (temporadas)
+        temporadas.textContent =
+          "Duración: " +
+          data.number_of_seasons +
+          " temporadas | " +
+          data.number_of_episodes +
+          " episodios";
+      if (elenco) elenco.textContent = "Elenco: cargando...";
+      if (creadores) {
+        let creador = "Desconocido";
+        if (data.created_by && data.created_by.length > 0) {
+          creador = data.created_by[0].name;
         }
+        creadores.textContent = "Escrito por: " + creador;
       }
-
-      contenedor.innerHTML = contenido;
+      if (generos) {
+        let nombres = "";
+        for (let i = 0; i < data.genres.length; i = i + 1) {
+          if (i > 0) {
+            nombres = nombres + ", ";
+          }
+          nombres = nombres + data.genres[i].name;
+        }
+        generos.textContent = "Géneros: " + nombres;
+      }
+      if (calificacion)
+        calificacion.textContent =
+          "Calificación de IMDb: " + data.vote_average + "/10";
+      if (imagen)
+        imagen.src = "https://image.tmdb.org/t/p/w500" + data.poster_path;
     })
     .catch(function (error) {
-      console.log("ERROR:", error);
-      contenedor.innerHTML = "<p style='background-color: #c62828ed; color: white; padding: 10px;'>Ocurrió un error al buscar.</p>";
+      console.log(error);
+      let titulo = document.querySelector(".Tit1");
+      if (titulo) {
+        titulo.textContent = "Error al cargar los datos";
+      }
     });
-
-
 });
-
-
-Series-genres
-window.addEventListener("load", function () {
-      const apiKey = '758f9c0fe9cf446d2c9eb164921c167f';
-      const genreList = document.querySelector(".listax");
-      const allowedGenres = [
-        'Action & Adventure',
-        'Animación',
-        'Comedia',
-        'Crimen',
-        'Documental',
-        'Drama',
-        'Misterio',
-        'Sci-Fi & Fantasy'
-      ];
-      const urlGeneros = `https://api.themoviedb.org/3/genre/tv/list?api_key=${apiKey}&language=es-ES`;
-   
-      fetch(urlGeneros)
-        .then(respuesta => respuesta.json())
-        .then(datos => {
-          let contenido = '';
-       
-          for (let i = 0; i < datos.genres.length; i = i + 1) {
-            let genre = datos.genres[i];
-            let permitido = false;
-            for (let j = 0; j < allowedGenres.length; j++) {
-              if (genre.name === allowedGenres[j]) {
-                permitido = true;
-              }
-            }
-            let yaAgregado = false;
-            for (let k = 0; k < i; k++) {
-              if (datos.genres[k].name === genre.name) {
-                yaAgregado = true;
-              }
-            }
-            if (permitido && !yaAgregado) {
-              contenido += `<li class="zzzj">
-                <nav>
-                  <a href="detail-genres.html?id=${genre.id}&name=${encodeURIComponent(genre.name)}&type=tv">
-                    <h3>${genre.name}</h3>
-                  </a>
-                </nav>
-              </li>`;
-            }
-          }
-          genreList.innerHTML = contenido;
-        })
-        .catch(error => {
-          console.log("Error al obtener los géneros de series:", error);
-        });
-    });
